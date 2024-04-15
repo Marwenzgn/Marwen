@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -62,9 +62,10 @@
           } else {
             alert("Réponse invalide. Veuillez entrer 'oui' ou 'non'.");
             var réponse = prompt("Avez-vous votre pays en tête? Si oui, tapez 'oui'. Si non, tapez 'non' ").toLowerCase(); 
+          }
 
           var note = -1;
-          while (!(0 <= note <= 20)) {
+          while (!(0 <= note && note <= 20)) {
             note = parseFloat(prompt("Sur une échelle de 0 à 20, notez votre expérience de jeu : "));
             if (note < 7) {
               var raison = prompt("Nous sommes désolés que votre expérience n'ait pas été à la hauteur. Nous espérons vous revoir bientôt. Que n'avez-vous pas apprécié dans le jeu ?");
@@ -72,20 +73,11 @@
             } else if (note < 16) {
               var raison = prompt("Qu'est-ce que vous n'avez pas apprécié dans le jeu ? Votre feedback est précieux pour nous : ");
               alert("Merci pour votre retour. Nous en tiendrons compte pour améliorer le jeu. À bientôt !");
-            } else if (note > 16) {
+            } else if (note >= 16) {
               alert("Merci d'avoir donné une note élevée ! Nous avons bien aimé votre expérience. À bientôt !");
             } else { 
               alert("Merci d'entrer une note comprise entre 0 et 20");
               note = parseFloat(prompt("Sur une échelle de 0 à 20, notez votre expérience de jeu : "));
-              if (note < 7) {
-                var raison = prompt("Nous sommes désolés que votre expérience n'ait pas été à la hauteur. Nous espérons vous revoir bientôt. Que n'avez-vous pas apprécié dans le jeu ?");
-                alert("Merci pour votre retour. Nous en tiendrons compte pour améliorer le jeu. À bientôt !");
-              } else if (note < 16) {
-                var raison = prompt("Qu'est-ce que vous n'avez pas apprécié dans le jeu ? Votre feedback est précieux pour nous : ");
-                alert("Merci pour votre retour. Nous en tiendrons compte pour améliorer le jeu. À bientôt !");
-              } else if (note > 16) {
-                alert("Merci d'avoir donné une note élevée ! Nous avons bien aimé votre expérience. À bientôt !");
-              }
             }
           }
 
