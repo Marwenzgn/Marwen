@@ -1,8 +1,3 @@
-
-Voici un exemple de contenu pour le fichier script.js :
-
-javascript
-Copy code
 function jouerAuJeu() {
   while (true) {
     alert("Bonjour, vous allez participer à un jeu créé par Zachary, Ayoub et Marwen!");
