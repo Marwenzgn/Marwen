@@ -93,5 +93,8 @@ function createSparkles() {
   document.body.appendChild(sparklesContainer);
 }
 
-// Appeler la fonction createSparkles() avant de quitter le jeu
-function endGame
+// Fonction pour afficher les étincelles et le message de fin
+function endGameMessage() {
+  createSparkles(); // Appel de la fonction createSparkles() pour afficher les étincelles
+  alert("Merci d'avoir joué ! À bientôt !");
+}
