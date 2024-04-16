@@ -67,10 +67,31 @@ function jouerAuJeu() {
 
     var rejouer = prompt("Voulez-vous rejouer ? Tapez 'oui' pour rejouer ou 'non' pour quitter. ").toLowerCase();
     if (rejouer !== "oui") {
-      alert("Merci d'avoir joué ! À bientôt !");
+      endGameMessage(); // Appel de la fonction endGameMessage() pour afficher le message de fin
       break;
     } else {
       alert("Recommençons !");
     }
   }
 }
+
+// Fonction pour créer des étincelles colorées
+function createSparkles() {
+  const sparklesContainer = document.createElement('div');
+  sparklesContainer.classList.add('sparkles-container');
+
+  // Création de 100 étincelles
+  for (let i = 0; i < 100; i++) {
+    const sparkle = document.createElement('div');
+    sparkle.classList.add('sparkle');
+    sparkle.style.left = Math.random() * 100 + 'vw'; // Position horizontale aléatoire
+    sparkle.style.animationDuration = Math.random() * 3 + 2 + 's'; // Durée de l'animation aléatoire
+    sparkle.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`; // Couleur aléatoire
+    sparklesContainer.appendChild(sparkle);
+  }
+
+  document.body.appendChild(sparklesContainer);
+}
+
+// Appeler la fonction createSparkles() avant de quitter le jeu
+function endGame
