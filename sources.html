@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sources du Jeu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      text-align: left;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    a {
+      display: block;
+      margin-top: 20px;
+      color: #0080ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
 
+<div class="container">
+  <h1>Voici les sources de notre jeu</h1>
+  <pre>
+import time
+
+while True:
+  print("Bonjour, vous allez participer à un jeu créé par Zachary, Ayoub et Marwen!")
+  print("Nous vous prions de ne pas chercher des réponses sur internet, pour avoir une expérience plus personnelle.")
+
+  print("\nEtape 1: Choisissez un nombre entre 1 et 10.")
+  input("Appuyez sur 'Entrée' pour passer à l'étape suivante...")
+
+  print("Etape 2: Multipliez ce nombre par 3.")
+  input("Appuyez sur 'Entrée' pour passer à l'étape suivante...")
+
+  print("Etape 3: Enlevez 4 au résultat.")
+  input("Appuyez sur 'Entrée' pour passer à l'étape suivante...")
+
+  print("Etape 4: Multipliez le résultat par 2.")
+  input("Appuyez sur 'Entrée' pour passer à l'étape suivante...")
+
+  print("Etape 5: Ajoutez 8.")
+  input("Appuyez sur 'Entrée' pour passer à l'étape suivante...")
+
+  print("Etape 6: Divisez le résultat par votre nombre de départ.")
+  input("Appuyez sur 'Entrée' pour passer à l'étape suivante...\n")
+
+  print("Etape 7: Pensez maintenant à un objet commençant par la dernière lettre du nombre obtenu.")
+  input("Appuyez sur 'Entrée' pour passer à l'étape suivante...")
+
+  print("Etape 8: Pour complexifier les choses, pensez maintenant à un aliment commençant par la deuxième lettre de votre objet choisi.")
+  input("Appuyez sur 'Entrée' pour passer à la dernière étape...")
+
+  print("Etape 9: Pour rendre les choses encore plus aléatoires, pensez à un pays d'Europe commençant par la cinquième lettre de votre aliment choisi.")
+  input("Appuyez sur 'Entrée' pour continuer...")
+
+  réponse = input("Avez-vous votre pays en tête? Si oui, tapez 'oui'. Si non, tapez 'non'. ").lower()
+
+  if réponse == "oui":
+    pays = input("Votre pays est-t-il la Roumanie? Si oui, tapez 'oui'. Si non, tapez 'non'. ").lower()
+    if pays == "oui":
+      print("Merci d'avoir joué ! Et essayez d'être moins prévisible la prochaine fois !")
+    elif pays == "non":
+      print("Haha je plaisante, votre pays est celui qui détient la plus grande superficie au monde !")
+      print("Merci d'avoir participé, et essayez d'être moins prévisible la prochaine fois !")
+  elif réponse == "non":
+    print("Prenez le temps de bien refaire les étapes du jeu, et de ne pas vous tromper !")
+    continue
+  else:
+    print("Réponse invalide. Veuillez entrer 'oui' ou 'non'.")
+    réponse = input("Avez-vous votre pays en tête? Si oui, tapez 'oui'. Si non, tapez 'non'. ").lower() 
+
+  note = -1
+  while not 0 <= note <= 20:
+    note = float(input("Sur une échelle de 0 à 20, notez votre expérience de jeu : "))
+    if note < 7:
+        raison = input("Nous sommes désolés que votre expérience n'ait pas été à la hauteur. Nous espérons vous revoir bientôt. Que n'avez-vous pas apprécié dans le jeu ?")
+        print("Merci pour votre retour. Nous en tiendrons compte pour améliorer le jeu. À bientôt !")
+    elif note < 16:
+      raison = input("Qu'est-ce que vous n'avez pas apprécié dans le jeu ? Votre feedback est précieux pour nous : ")
+      print("Merci pour votre retour. Nous en tiendrons compte pour améliorer le jeu. À bientôt !")
+    elif note > 16:
+      print("Merci d'avoir donné une note élevée ! Nous avons bien aimé votre expérience. À bientôt !")
+    else: 
+      print("Merci d'entrer une note comprise entre 0 et 20")
+      note = float(input("Sur une échelle de 0 à 20, notez votre expérience de jeu : "))
+      if note < 7:
+        raison = input("Nous sommes désolés que votre expérience n'ait pas été à la hauteur. Nous espérons vous revoir bientôt. Que n'avez-vous pas apprécié dans le jeu ?")
+        print("Merci pour votre retour. Nous en tiendrons compte pour améliorer le jeu. À bientôt !")
+      elif note < 16:
+        raison = input("Qu'est-ce que vous n'avez pas apprécié dans le jeu ? Votre feedback est précieux pour nous : ")
+        print("Merci pour votre retour. Nous en tiendrons compte pour améliorer le jeu. À bientôt !")
+      elif note > 16:
+        print("Merci d'avoir donné une note élevée ! Nous avons bien aimé votre expérience. À bientôt !")
+
+  rejouer = input("Voulez-vous rejouer ? Tapez 'oui' pour rejouer ou 'non' pour quitter. ").lower()
+  if rejouer != "oui":
+    print("Merci d'avoir joué ! À bientôt !")
+    break
+  else:
+    print("Recommençons !")
+    time.sleep(1)
+  </pre>
+  <p>Merci d'avoir consulté les sources du jeu. Si vous souhaitez en apprendre davantage sur les créateurs, veuillez cliquer sur le lien ci-dessous :</p>
+  <a href="informations.html">En savoir plus sur les créateurs du jeu</a>
+</div>
+
+</body>
+</html>
