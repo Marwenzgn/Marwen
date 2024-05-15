@@ -1,1 +1,144 @@
+/* Définition des variables CSS pour des couleurs et des espacements réutilisables */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --font-family: 'Arial, sans-serif';
+    --spacing: 16px;
+}
+
+/* Réinitialisation des marges et des paddings par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style global pour le body */
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    padding: var(--spacing);
+}
+
+/* Conteneur principal avec une mise en page en grille */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing);
+    margin-top: var(--spacing);
+}
+
+/* Style pour les en-têtes */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--spacing);
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: var(--spacing);
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    padding: var(--spacing);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 var(--spacing);
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Style pour le contenu principal */
+.main-content {
+    background-color: white;
+    padding: var(--spacing);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Flexbox pour les articles */
+.article-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+}
+
+.article {
+    background-color: var(--background-color);
+    padding: var(--spacing);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.article:hover {
+    transform: translateY(-10px);
+}
+
+/* Pied de page */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: var(--spacing);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Boutons stylisés */
+.button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: var(--spacing);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: darken(var(--secondary-color), 10%);
+}
+
+/* Formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+}
+
+form input, form textarea {
+    padding: var(--spacing);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: var(--spacing) 0;
+    }
+}
 
