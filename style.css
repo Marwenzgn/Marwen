@@ -1,143 +1,128 @@
-/* Définition des variables CSS pour des couleurs et des espacements réutilisables */
-:root {
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
-    --background-color: #f4f4f4;
-    --text-color: #333;
-    --font-family: 'Arial, sans-serif';
-    --spacing: 16px;
-}
-
-/* Réinitialisation des marges et des paddings par défaut */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Style global pour le body */
+/* Styles généraux */
 body {
-    font-family: var(--font-family);
-    color: var(--text-color);
-    background-color: var(--background-color);
-    line-height: 1.6;
-    padding: var(--spacing);
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #333;
 }
 
-/* Conteneur principal avec une mise en page en grille */
 .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing);
-    margin-top: var(--spacing);
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Style pour les en-têtes */
-header {
-    background-color: var(--primary-color);
-    color: white;
-    padding: var(--spacing);
-    text-align: center;
+.container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-header h1 {
-    margin-bottom: var(--spacing);
+h1 {
+  color: #0080ff;
+  font-size: 2.5em;
+  margin-bottom: 20px;
 }
 
-/* Navigation */
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: var(--secondary-color);
-    padding: var(--spacing);
+h2 {
+  color: #0055aa;
+  font-size: 2em;
+  margin-bottom: 15px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 var(--spacing);
+p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 1.1em;
 }
 
-nav a:hover {
-    text-decoration: underline;
+a {
+  color: #0080ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-/* Style pour le contenu principal */
-.main-content {
-    background-color: white;
-    padding: var(--spacing);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+a:hover {
+  color: #0055aa;
+  text-decoration: underline;
 }
 
-/* Flexbox pour les articles */
-.article-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing);
+/* Styles pour les boutons */
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #0080ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-.article {
-    background-color: var(--background-color);
-    padding: var(--spacing);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
+button:hover {
+  background-color: #0055aa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-.article:hover {
-    transform: translateY(-10px);
+/* Styles pour les listes */
+ul {
+  text-align: left;
+  padding-left: 20px;
+  list-style-type: disc;
 }
 
-/* Pied de page */
-footer {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: var(--spacing);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+li {
+  margin-bottom: 10px;
+  font-size: 1.1em;
 }
 
-/* Boutons stylisés */
-.button {
-    background-color: var(--secondary-color);
-    color: white;
-    border: none;
-    padding: var(--spacing);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+/* Styles pour les images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.button:hover {
-    background-color: darken(var(--secondary-color), 10%);
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Formulaire */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing);
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-form input, form textarea {
-    padding: var(--spacing);
-    border: 1px solid #ddd;
-    border-radius: 4px;
+.container {
+  animation: fadeIn 1s ease-in-out;
 }
 
-/* Responsive design */
-@media (max-width: 600px) {
-    .container {
-        grid-template-columns: 1fr;
-    }
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-    nav {
-        flex-direction: column;
-    }
-
-    nav a {
-        margin: var(--spacing) 0;
-    }
+h1, h2 {
+  animation: slideIn 0.5s ease-out;
 }
