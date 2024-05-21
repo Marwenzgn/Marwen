@@ -16,6 +16,16 @@
     .container {
       max-width: 600px;
       margin: 50px auto;
+      position: relative;
+    }
+    .image-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .image-container img {
+      max-width: 100px;
+      height: auto;
     }
     #gameContainer {
       display: none;
@@ -46,6 +56,9 @@
 <body>
 
 <div class="container">
+  <div class="image-container">
+    <img src="https://cdn.pixabay.com/photo/2015/02/03/15/52/think-622689_960_720.png" alt="Image">
+  </div>
   <h1>Jeu</h1>
   <button onclick="startGame()">Commencer le jeu</button>
   <div id="gameContainer">
@@ -140,10 +153,10 @@
   </div>
 
   <a href="avis.html">Voir les avis des autres joueurs</a>
+</div>
 
-  <div id="confetti">
-    <canvas id="canvas"></canvas>
-  </div>
+<div id="confetti">
+  <canvas id="canvas"></canvas>
 </div>
 
 <script>
@@ -210,3 +223,4 @@
 
 </body>
 </html>
+
